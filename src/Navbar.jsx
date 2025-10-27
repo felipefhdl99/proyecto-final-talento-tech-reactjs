@@ -18,6 +18,9 @@ export default function Navbar() {
             <Link to="/productos">Productos</Link>
           </li>
           <li>
+            <Link to="/acerca">Acerca</Link>
+          </li>
+          <li>
             <Link to="/carrito" className="cart-link">
               Carrito
               {getTotalItems() > 0 && (

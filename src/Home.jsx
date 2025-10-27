@@ -18,7 +18,7 @@ export default function Home() {
               <a href="/productos" className="btn btn-primary">
                 Ver Productos
               </a>
-              <a href="#about" className="btn btn-secondary">
+              <a href="/acerca" className="btn btn-secondary">
                 Conocer Más
               </a>
             </div>
