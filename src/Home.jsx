@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -15,12 +16,12 @@ export default function Home() {
               excepcional
             </p>
             <div className="hero-buttons">
-              <a href="/productos" className="btn btn-primary">
+              <Link to="/productos" className="btn btn-primary">
                 Ver Productos
-              </a>
-              <a href="/acerca" className="btn btn-secondary">
+              </Link>
+              <Link to="/acerca" className="btn btn-secondary">
                 Conocer Más
-              </a>
+              </Link>
             </div>
           </div>
         </div>
