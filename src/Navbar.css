@@ -1,7 +1,7 @@
 .navbar {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgb(36, 36, 36);
+  /* backdrop-filter: blur(20px); */
+  border-bottom: 1px solid rgba(255, 255, 255);
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -23,13 +23,14 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0);
   letter-spacing: -0.5px;
 }
 
 .navbar-links {
   display: flex;
   list-style: none;
+  align-items: center;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -46,7 +47,7 @@
   padding: 8px 16px;
   border-radius: 25px;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   border: 1px solid transparent;
 }
 
@@ -60,4 +61,32 @@
 .navbar-links a.active {
   background: rgba(255, 255, 255, 0.2);
   color: white;
+}
+
+.cart-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-count {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

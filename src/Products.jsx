@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import "./Products.css";
 import Navbar from "./Navbar";
+import { useCart } from "./CartContext";
 import React from "react";
 
 // class Producto {
@@ -24,6 +26,7 @@ export default function Productos() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -74,14 +77,24 @@ export default function Productos() {
       <ul className="product-list">
         {data.map((product) => (
           <li className="product-item" key={product.id}>
-            <div className="product-image">
-              <img src={product.productImage} alt={product.productName} />
+            <Link to={`/productos/${product.id}`} className="product-link">
+              <div className="product-image">
+                <img src={product.productImage} alt={product.productName} />
+              </div>
+              <div className="product-name">{product.productName}</div>
+              <div className="product-description">
+                {product.productDescription}
+              </div>
+            </Link>
+            <div className="product-footer">
+              <div className="product-price">${product.price}</div>
+              <button
+                className="add-to-cart-btn"
+                onClick={() => addToCart(product)}
+              >
+                Agregar
+              </button>
             </div>
-            <div className="product-name">{product.productName}</div>
-            <div className="product-description">
-              {product.productDescription}
-            </div>
-            <div className="product-price">${product.price}</div>
           </li>
         ))}
       </ul>
